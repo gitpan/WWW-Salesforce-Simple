@@ -1,5 +1,8 @@
 Revision history for Perl extension WWW::Salesforce::Simple.
 
+0.06  Thu Jan 19 15:43:33 2006
+    - fixed error in documentation
+
 0.05  Thu Jan 19 11:14:46 2006
 	- original version; created by h2xs 1.23 with options
 		-X -n WWW::Salesforce::Simple

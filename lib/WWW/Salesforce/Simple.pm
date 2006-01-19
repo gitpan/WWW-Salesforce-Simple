@@ -8,7 +8,7 @@ package WWW::Salesforce::Simple;
 
     #handle versioning and exporting
     use vars qw( $VERSION @ISA );
-    $VERSION = '0.05';
+    $VERSION = '0.06';
     @ISA = qw( WWW::Salesforce );
 
     #**************************************************************************
@@ -104,7 +104,7 @@ package WWW::Salesforce::Simple;
 
 =head1 NAME
 
-WWW::Salesforce::Simple.pm v0.05 - this class provides a simpler abstraction layer between WWW::Salesforce and Salesforce.com.
+WWW::Salesforce::Simple.pm v0.06 - this class provides a simpler abstraction layer between WWW::Salesforce and Salesforce.com.
 
 =head1 DESCRIPTION
 
@@ -116,9 +116,7 @@ was created to make it a little simpler to get information.
 =head2 new( %parameters )
 
 Handles creating new Salesforce objects as well as the login process
-to use the salesforce objects. You can optionally set the username and
-password to login to salesforce with a hash ref with a username and or
-password key if you need to use a user other than the default user.
+to use the salesforce objects. 
 
 =head2 do_query( $sql_query_string )
 
@@ -143,13 +141,11 @@ reference to an array of strings representing each table name.
 
 =head2 new()
 
-    use Salesforce::Simple;
+    use WWW::Salesforce::Simple;
 
-    my $sforce = Salesforce::Simple->new();
-    #or
-    my $sforce = Salesforce::Simple->new(
-        -username=>'someuser',
-        -password=>'somepass'
+    my $sforce = WWW::Salesforce::Simple->new(
+        'username' => $user,
+        'password' => $pass
     );
 
 =head2 do_query( $query )
@@ -197,6 +193,10 @@ resolve your issue online.
 Chase Whitener <cwhitener at gmail dot com>
 
 =head1 VERSION INFORMATION
+
+version 0.06
+released 2006-01-19
+    - fixed documentation errors
 
 version 0.05
 released 2006-01-19
