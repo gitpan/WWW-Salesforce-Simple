@@ -1,0 +1,17 @@
+Revision history for Perl extension WWW::Salesforce::Simple.
+
+0.05  Thu Jan 19 11:14:46 2006
+	- original version; created by h2xs 1.23 with options
+		-X -n WWW::Salesforce::Simple
+
+0.04
+released 2006-01-06
+    -fixed some documentation errors, made the module ready to be posted to CPAN
+
+0.03
+released 2005-10-31
+    -fixed some line length issues, added ability to change username
+    and password by parameters to the constructor -username => ''
+    -password => ''
+
+
