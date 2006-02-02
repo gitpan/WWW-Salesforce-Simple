@@ -1,6 +1,6 @@
 package WWW::Salesforce::Simple;
 {
-    use 5.008007;
+    use 5.008001;
     use strict;
     use warnings;
     use Carp;
@@ -8,7 +8,7 @@ package WWW::Salesforce::Simple;
 
     #handle versioning and exporting
     use vars qw( $VERSION @ISA );
-    $VERSION = '0.06';
+    $VERSION = '0.08';
     @ISA = qw( WWW::Salesforce );
 
     #**************************************************************************
@@ -104,7 +104,7 @@ package WWW::Salesforce::Simple;
 
 =head1 NAME
 
-WWW::Salesforce::Simple.pm v0.06 - this class provides a simpler abstraction layer between WWW::Salesforce and Salesforce.com.
+WWW::Salesforce::Simple.pm v0.08 - this class provides a simpler abstraction layer between WWW::Salesforce and Salesforce.com.
 
 =head1 DESCRIPTION
 
@@ -191,27 +191,6 @@ resolve your issue online.
 =head1 AUTHORS
 
 Chase Whitener <cwhitener at gmail dot com>
-
-=head1 VERSION INFORMATION
-
-version 0.06
-released 2006-01-19
-    - fixed documentation errors
-
-version 0.05
-released 2006-01-19
-	- original version; created by h2xs 1.23 with options
-		-X -n WWW::Salesforce::Simple
-
-version 0.04
-released 2006-01-06
-    -fixed some documentation errors, made the module ready to be posted to CPAN
-
-version 0.03
-released 2005-10-31
-    -fixed some line length issues, added ability to change username
-    and password by parameters to the constructor -username => ''
-    -password => ''
 
 =head1 COPYRIGHT
 
