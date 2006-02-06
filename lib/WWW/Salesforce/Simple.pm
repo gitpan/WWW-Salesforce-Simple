@@ -8,7 +8,7 @@ package WWW::Salesforce::Simple;
 
     #handle versioning and exporting
     use vars qw( $VERSION @ISA );
-    $VERSION = '0.08';
+    $VERSION = '0.09';
     @ISA = qw( WWW::Salesforce );
 
     #**************************************************************************
@@ -26,18 +26,21 @@ package WWW::Salesforce::Simple;
     }
 
     #**************************************************************************
-    # do_query( $query )
-    #   -- returns an array of hash refs
+    # do_query( $query, [$limit] )
+    #   -- returns a reference to an array of hash refs
     #**************************************************************************
     sub do_query {
-        my ( $self, $query ) = @_;
+        my ( $self, $query, $limit ) = @_;
 
         croak( 'Param1 of do_query() should be a string SQL query' )
             unless defined $query and $query =~ m/^select/i;
 
+        $limit = 2000
+            unless $limit =~ m/^\d+$/ and $limit > 0 and $limit < 2001;
+            
         my @rows = (); #to be returned
 
-        my $res = $self->query( query => $query, limit => 2000 );
+        my $res = $self->query( query => $query, limit => $limit );
 
         croak( $res->faultstring() ) if $res->fault();
 
@@ -51,7 +54,7 @@ package WWW::Salesforce::Simple;
         while ( $done eq 'false' ) {
             $res = $self->queryMore(
                 queryLocator => $ql,
-                limit => 2000
+                limit => $limit
             );
 
             croak( $res->faultstring() ) if $res->fault();
@@ -104,7 +107,7 @@ package WWW::Salesforce::Simple;
 
 =head1 NAME
 
-WWW::Salesforce::Simple.pm v0.08 - this class provides a simpler abstraction layer between WWW::Salesforce and Salesforce.com.
+WWW::Salesforce::Simple.pm v0.09 - this class provides a simpler abstraction layer between WWW::Salesforce and Salesforce.com.
 
 =head1 DESCRIPTION
 

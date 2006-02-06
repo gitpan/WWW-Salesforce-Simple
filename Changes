@@ -1,9 +1,12 @@
 Revision history for Perl extension WWW::Salesforce::Simple.
 
-0.08 Thu Feb 2 15:40:00 2006
+0.09 Mon Feb 06 15:52:00 2006
+    - made the do_query() function able to have a variable size limit on the returned data.
+
+0.08 Thu Feb 02 15:40:00 2006
     - fixed a WWW::Salesforce prereq
 
-0.07  Thu Feb 2 15:29:00 2006
+0.07  Thu Feb 02 15:29:00 2006
     - fixed perl version prereq to be 5.8.1 instead of 5.8.7
     - fixed some documentation
 
